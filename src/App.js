@@ -42,7 +42,7 @@ export default class App extends React.Component {
       <h1>{this.state.from && `From: ${this.state.from}`}</h1>
       <h1>{this.state.name && `Name: ${this.state.name}`}</h1>
       {
-        ["m", "r", ""].map((name) => (
+        ["m", "r"].map((name) => (
           <Button key={name} name={name} click={this.btnClick.bind(this)} />
         ))
       }
