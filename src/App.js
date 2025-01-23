@@ -32,21 +32,21 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <button name="mailu" onClick={(e) => this.btnClick("parent", e)}>
-          mailu
-        </button>
-        <button name="ashu" onClick={(e) => this.btnClick("parent", e)}>
-          ashu
-        </button>
-        <button name="ammu" onClick={(e) => this.btnClick("parent", e)}>
-          ammu
-        </button>
-        <h1>{this.state.from ? "From: " + this.state.from : ""}</h1>
-        <h1>{this.state.name ? "Name: " + this.state.name : ""}</h1>
-        <Button name="m" click={this.btnClick.bind(this)} />
-        <Button name="a" click={this.btnClick.bind(this)} />
-        <Button name="A" click={this.btnClick.bind(this)} />
-      </div>
+      {
+        ["mailu", "ashu", "ammu"].map((name) => (
+          <button key={name} name={name} onClick={(e) => this.btnClick("parent", e)}>
+           {name}
+          </button>
+        ))
+      }
+      <h1>{this.state.from && `From: ${this.state.from}`}</h1>
+      <h1>{this.state.name && `Name: ${this.state.name}`}</h1>
+      {
+        ["m", "a", "A"].map((name) => (
+          <Button key={name} name={name} click={this.btnClick.bind(this)} />
+        ))
+      }
+</div>
     );
   }
 }
