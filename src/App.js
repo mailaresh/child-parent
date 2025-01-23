@@ -33,7 +33,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
       {
-        ["mailu", "ashu", "ammu"].map((name) => (
+        ["mailu", "raj"].map((name) => (
           <button key={name} name={name} onClick={(e) => this.btnClick("parent", e)}>
            {name}
           </button>
@@ -42,7 +42,7 @@ export default class App extends React.Component {
       <h1>{this.state.from && `From: ${this.state.from}`}</h1>
       <h1>{this.state.name && `Name: ${this.state.name}`}</h1>
       {
-        ["m", "a", "A"].map((name) => (
+        ["m", "r", ""].map((name) => (
           <Button key={name} name={name} click={this.btnClick.bind(this)} />
         ))
       }
